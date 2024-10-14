@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe | Angel De la Cruz</title>
+    <link rel="stylesheet" href="../estilos/juegoCPU.css">
+</head>
+<body>
+    
+    <div class="botonesDireccion">
+        <button id="btnVolver"><img src="../recursos/imgs/volverIcono.png"></button>
+        <button class="btnReiniciar"><img src="../recursos/imgs/reiniciarIcono.png"></button>
+    </div>
+
+    <div class="juego">
+        <div class="jugadores">
+            <div class="jugador1">
+                <h1 id="nombreJug1"></h1>
+                <div class="fotoJugador1">
+                    <h2 id="inicialesJug1"></h2>
+                    <div class="fichaJug1">
+                        <img src="../recursos/imgs/iconoJugador1.png" id="fichaImg">
+                    </div>
+                </div>
+            </div>
+            <h2 id="vs">VS</h2>
+            <div class="jugador2">
+                <h1 id="nombreJug2">Computadora</h1>
+                <div class="fotoJugador2">
+                    <h2 id="inicialesJug2">CPU</h2>
+                    <div class="fichaJug2">
+                        <img src="../recursos/imgs/iconoJugador2.png" id="fichaImg">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="fondoJuego">
+            <div class="puntaje">
+                <div class="victoriasJugador1">
+                    <h2 id="inicialesJugador1Fondo"></h2>
+                    <h3 id="marcadorJugador1"><span id="puntajeJug1">0<span> Ganadas</h3>
+                </div>
+                <div class="victoriasJugador2">
+                    <h2 id="inicialesJugador2Fondo">CPU</h2>
+                    <h3 id="marcadorJugador2"><span id="puntajeJug2">0<span> Ganadas</h3>
+                </div>
+                <div class="empates">
+                    <img src="../recursos/imgs/empateIcono.png">
+                    <h3 id="marcadorEmpate"><span id="puntajeEmpate">0<span> Empates</h3>
+                </div>
+            </div>
+            <div class="tablero">
+                <div class="celda" id="celda-1"></div>
+                <div class="celda" id="celda-2"></div>
+                <div class="celda" id="celda-3"></div>
+                <div class="celda" id="celda-4"></div>
+                <div class="celda" id="celda-5"></div>
+                <div class="celda" id="celda-6"></div>
+                <div class="celda" id="celda-7"></div>
+                <div class="celda" id="celda-8"></div>
+                <div class="celda" id="celda-9"></div>
+            </div>
+        </div>
+    </div>
+
+    <section class="modalVictoria">
+        <div class="modalResultados">
+            <img src="../recursos/imgs/victoriaIcono.png" class="modalImg">
+            <h2 id="tituloModal">VICTORIA</h2>
+            <h3 id="nombreJugadorModalVic"></h3>
+            <div class="puntaje">
+                <div class="victoriasJugador1">
+                    <h2 id="inicialesJugador1Modal"></h2>
+                    <h3 id="marcadorJugador1"><span id="puntajeJug1Modal">0<span> Ganadas</h3>
+                </div>
+                <div class="victoriasJugador2">
+                    <h2 id="inicialesJugador2Modal">CPU</h2>
+                    <h3 id="marcadorJugador2"><span id="puntajeJug2Modal">0<span> Ganadas</h3>
+                </div>
+                <div class="empates">
+                    <img src="../recursos/imgs/empateIcono.png">
+                    <h3 id="marcadorEmpate"><span id="puntajeEmpateModal">0<span> Empates</h3>
+                </div>
+            </div>
+            <div class="btnContainer">
+                <button class="btnSalirModal">SALIR</button>
+                <button class="btnProxModal">PRÓXIMO ROUND</button>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="modalDerrota">
+        <div class="modalResultados">
+            <img src="../recursos/imgs/derrotaIcono.png" class="modalImg2">
+            <h2 id="tituloModal">DERROTA</h2>
+            <h3 id="nombreJugadorModal">Computadora Ganó</h3>
+            <div class="puntaje">
+                <div class="victoriasJugador1">
+                    <h2 id="inicialesJugador1ModalD"></h2>
+                    <h3 id="marcadorJugador1"><span id="puntajeJug1ModalD">0<span> Ganadas</h3>
+                </div>
+                <div class="victoriasJugador2">
+                    <h2 id="inicialesJugador2ModalD">CPU</h2>
+                    <h3 id="marcadorJugador2"><span id="puntajeJug2ModalD">0<span> Ganadas</h3>
+                </div>
+                <div class="empates">
+                    <img src="../recursos/imgs/empateIcono.png">
+                    <h3 id="marcadorEmpate"><span id="puntajeEmpateModalD">0<span> Empates</h3>
+                </div>
+            </div>
+            <div class="btnContainer">
+            <button class="btnSalirModalD">SALIR</button>
+            <button class="btnProxModalD">PRÓXIMO ROUND</button>
+        </div>
+        </div>
+    </section>
+
+
+    <section class="modalEmpate">
+        <div class="modalResultados">
+            <img src="../recursos/imgs/empateIconoModal.png" class="modalImg3">
+            <h2 id="tituloModal">EMPATE</h2>
+            <h3 id="nombreJugadorModalEmp"><span id="nombreJugador1emp"></span> - <span
+                    id="nombreJugador2emp">Computadora</span></h3>
+            <div class="puntaje">
+                <div class="victoriasJugador1">
+                    <h2 id="inicialesJugador1Mod"></h2>
+                    <h3 id="marcadorJugador1"><span id="puntajeJug1Mod">0<span> Ganadas</h3>
+                </div>
+                <div class="victoriasJugador2">
+                    <h2 id="inicialesJugador2Mod">CPU</h2>
+                    <h3 id="marcadorJugador2"><span id="puntajeJug2Mod">0<span> Ganadas</h3>
+                </div>
+                <div class="empates">
+                    <img src="../recursos/imgs/empateIcono.png">
+                    <h3 id="marcadorEmpate"><span id="puntajeEmpateMod">0<span> Empates</h3>
+                </div>
+            </div>
+            <div class="btnContainer">
+                <button id="btnSalirModal">SALIR</button>
+                <button id="btnProxModal">PRÓXIMO ROUND</button>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="modalReiniciar">
+        <div class="cajaReiniciar">
+            <h2>¿Seguro que desea
+                <br>
+                reiniciar la partida?
+            </h2>
+            <div class="btnContainer">
+                <button class="btnCancelar">CANCELAR</button>
+                <button class="btnReiniciarModal">REINICIAR PARTIDA</button>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Archivo de sonido -->
+    <audio id="sonidoBtn" src="../recursos/sounds/fichaSonido.MP3"></audio>
+    <audio id="sonidoVictoria" src="../recursos/sounds/victoriaSonido.MP3"></audio>
+    <audio id="sonidoDerrota" src="../recursos/sounds/derrotaSonido.MP3"></audio>
+    <audio id="sonidoEmpate" src="../recursos/sounds/empateSonido.MP3"></audio>
+    
+
+<script src="../funciones/juegoCPU.js"></script>
+</body>
+</html>

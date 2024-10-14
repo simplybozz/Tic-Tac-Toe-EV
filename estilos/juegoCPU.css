@@ -1,0 +1,613 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    background-image: url(../recursos/imgs/Background.png);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+}
+
+.botonesDireccion {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+    position: fixed;
+    top: 20px;
+}
+
+.jugadores {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 60px;
+    width: 80%;
+    margin: 0 auto 60px auto
+}
+
+.jugadores h1 {
+    text-align: center;
+    font-size: 20px;
+    color: #ffff;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.fotoJugador1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px auto;
+    width: 90px;
+    height: 90px;
+    background-color: #ffff;
+    border-radius: 50%;
+    border: 5px solid #535A72;
+    position: relative;
+}
+
+#inicialesJug1{
+    color: #535A72;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.fotoJugador2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px auto;
+    width: 90px;
+    height: 90px;
+    background-color: #ffff;
+    border-radius: 50%;
+    border: 5px solid #27A8F3;
+    position: relative;
+}
+
+.fichaJug1{
+    background-color: #FFFFFF;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #535A72;
+    position: absolute;
+    bottom: -10px;
+    right: 0px;
+    padding: 7px;
+}
+
+.fichaJug2{
+    background-color: #FFFFFF;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #27A8F3;
+    position: absolute;
+    bottom: -10px;
+    right: 0px;
+    padding: 7px;
+}
+
+#fichaImg{
+    width: 15px;
+}
+
+#inicialesJug2{
+    color: #27A8F3;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+#vs {
+    text-align: center;
+    font-size: 40px;
+    color: #ffff;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.botonesDireccion button {
+    border-radius: 12px;
+    width: 120px;
+    height: 100px;
+    border: 0;
+    cursor: pointer;
+}
+
+.botonesDireccion button img {
+    border-radius: 12px;
+    width: 60px;
+    height: 60px;
+    border: 0;
+}
+
+#btnVolver {
+    background-color: #EF9519;
+}
+
+.btnReiniciar {
+    background-color: #2AB4FD;
+}
+
+.fondoJuego {
+    width: 450px;
+    height: 580px;
+    align-items: center;
+    justify-content: space-around;
+    background: #030263;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 34px;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 0px 40px 0px;
+    margin-bottom: 40px;
+}
+
+.puntaje {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin: 20px auto 00px auto;
+    margin-top: 25px;
+}
+
+.victoriasJugador1 #inicialesJugador1, #inicialesJugador1Fondo, #inicialesJugador1Modal, #inicialesJugador1Mod, #inicialesJugador1ModalD {
+    font-size: 40px;
+}
+
+.victoriasJugador1 #marcadorJugador1 {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.victoriasJugador2, #inicialesJugador2, #inicialesJugador2Fondo, #inicialesJugador2Modal, #inicialesJugador2Mod, #inicialesJugador2ModalD{
+    font-size: 40px;
+}
+
+.victoriasJugador2, #marcadorJugador2{
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.empates #marcadorEmpate {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.victoriasJugador {
+    height: 100px;
+    color: #FFFFFF;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.empates {
+    height: 100px;
+    color: #FFFFFF;
+    border-radius: 10px;
+}
+
+.tablero {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.celda {
+    width: 100px;
+    height: 100px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+/* MODALES */
+.modalVictoria,
+.modalDerrota,
+.modalReiniciar,
+.modalEmpate {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #0000008c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .6s;
+    --transform: translateY(-100vh);
+    --transition: transform .8s;
+}
+
+.modal--show {
+    opacity: 1;
+    pointer-events: unset;
+    transition: opacity .6s;
+    --transform: translateY(0);
+}
+
+.modalResultados {
+    width: 580px;
+    height: 554px;
+    background-image: url(../recursos/imgs/backgroundVictoriaDetorra.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    transform: var(--transform);
+    transition: var(--transition);
+}
+
+#tituloModal {
+    margin-top: 10px;
+    font-family: "Roboto", sans-serif;
+    color: #ffff;
+    font-size: 40px;
+}
+
+#nombreJugadorModal, #nombreJugadorModalVic, #nombreJugador1, #nombreJugador2, #nombreJugadorModalEmp{
+    font-family: "Roboto", sans-serif;
+    color: #ffff;
+    font-size: 30px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.modalImg {
+    width: 140px;
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+.victoriasJugador1,
+.victoriasJugador2,
+.empates {
+    width: 100px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.victoriasJugador1 h2,
+.victoriasJugador2 h2 {
+    font-size: 24px;
+}
+
+.victoriasJugador1 h3,
+.victoriasJugador2 h3,
+.empates h3 {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.empates img {
+    width: 48px;
+    height: 45px;
+}
+
+.btnContainer {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btnSalirModal,
+.btnProxModal,
+.btnSalirModalD,
+.btnProxModalD,
+#btnSalirModal,
+#btnProxModal {
+    width: 200px;
+    height: 65px;
+    border-radius: 12px;
+    border: 0;
+    font-size: 15px;
+    color: #ffff;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.btnSalirModal, #btnSalirModal, .btnSalirModalD{
+    background-color: #EF9519;
+}
+
+.btnProxModal, #btnProxModal, .btnProxModalD{
+    background-color: #2AB4FD;
+}
+
+.modalImg2 {
+    width: 214px;
+    margin-bottom: 10px;
+}
+
+.modalImg3 {
+    width: 130px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+}
+
+.cajaReiniciar {
+    width: 640px;
+    height: 300px;
+    background-image: url(../recursos/imgs/backgroundReiniciar.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    transform: var(--transform);
+    transition: var(--transition);
+    align-items: center;
+    justify-content: center;
+}
+
+.cajaReiniciar h2 {
+    text-align: center;
+    font-size: 25px;
+    color: #ffff;
+    font-weight: 400;
+}
+
+.btnCancelar,
+.btnReiniciarModal {
+    width: 150px;
+    height: 50px;
+    border-radius: 12px;
+    border: 0;
+    font-size: 13px;
+    color: #ffff;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.btnCancelar {
+    background-color: #EF9519;
+}
+
+.btnReiniciarModal {
+    background-color: #2AB4FD;
+}
+
+.x{
+    width: 50px;
+}
+
+.o{
+    width: 50px;
+}
+
+
+/*RESPONSIVE*/
+@media (max-width:1025px){
+    body {
+        background-image: url(../recursos/imgs/Backtablet.png);
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        background-image: url(../recursos/imgs/Backiphone.png);
+    }
+
+    .botonesDireccion {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0px 17px;
+        position: fixed;
+        top: 18px;
+    }
+
+    .botonesDireccion button {
+        border-radius: 12px;
+        width: 55px;
+        height: 56px;
+        border: 0;
+        cursor: pointer;
+    }
+
+    #btnVolver {
+        padding: 8px;
+    }
+
+    #btnReiniciar {
+        padding: 8px;
+    }
+
+    .botonesDireccion button img {
+        border-radius: 12px;
+        width: 40px;
+        height: auto;
+        border: 0;
+    }
+
+    .juego {
+        width: 90%;
+        margin: auto;
+    }
+
+    .fotoJugador2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0px auto;
+        width: 75px;
+        height: 75px;
+        background-color: #ffff;
+        border-radius: 50%;
+        border: 3px solid #27A8F3;
+        position: relative;
+    }
+
+    #nombreJug2 {
+        font-size: 14px;
+    }
+
+    .fotoJugador1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0px auto;
+        width: 75px;
+        height: 75px;
+        background-color: #ffff;
+        border-radius: 50%;
+        border: 3px solid #535A72;
+        position: relative;
+    }
+
+    #vs {
+        text-align: center;
+        font-size: 33px;
+        color: #ffff;
+        font-weight: bold;
+        margin-top: 30px;
+    }
+
+    .puntaje {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        margin: -37px;
+        margin-top: -5px;
+        width: 100%;
+    }
+
+    .victoriasJugador2, #marcadorJugador2 {
+        font-size: 18px;
+        font-weight: 300;
+    }
+
+    .victoriasJugador1 #marcadorJugador1 {
+        font-size: 18px;
+        font-weight: 300;
+    }
+
+    .empates #marcadorEmpate {
+        font-size: 18px;
+        font-weight: 300;
+    }
+
+    .empates img {
+        width: 48px;
+        height: 45px;
+    }
+
+    .tablero {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 18px;
+        width: 87%;
+        margin: 13px;
+    }
+
+    .fondoJuego {
+        width: 100%;
+        height: 470px;
+        align-items: center;
+        justify-content: space-around;
+        background: #030263;
+        box-shadow: 0px 3px 6px #00000029;
+        border-radius: 34px;
+        opacity: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 6px;
+        margin-bottom: -50px;
+    }
+
+    .celda {
+        width: 80px;
+        height: 80px;
+        background-color: #FFFFFF;
+        border-radius: 10px;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .modalResultados {
+        width: 90%;
+        height: auto;
+        background-image: url(../recursos/imgs/backgroundVictoriaDetorra.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 36px 13px;
+        transform: var(--transform);
+        transition: var(--transition);
+    }
+
+    .btnContainer {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+        flex-direction: column-reverse;
+        width: 100%;
+    }
+
+    .btnSalirModal, .btnProxModal, #btnSalirModal, #btnProxModal {
+        width: 100%;
+        height: 65px;
+        border-radius: 12px;
+        border: 0;
+        font-size: 15px;
+        color: #ffff;
+        cursor: pointer;
+        margin-bottom: -6px;
+        margin-top: 10px;
+    }
+
+    .btnCancelar, .btnReiniciarModal {
+        width: 100%;
+        height: 49px;
+        border-radius: 12px;
+        border: 0;
+        font-size: 13px;
+        color: #ffff;
+        cursor: pointer;
+        margin-top: -7px;
+        margin-bottom: 9px;
+    }
+}
+
