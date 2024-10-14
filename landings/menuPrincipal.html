@@ -1,24 +1,37 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+    <!-- Configuración básica de codificación y escalado en dispositivos móviles -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Título de la página del menú principal -->
     <title>Tic Tac Toe | Angel De la Cruz</title>
+    
+    <!-- Enlace al archivo CSS para el diseño del menú principal -->
     <link rel="stylesheet" href="../estilos/menuPrincipal.css">
 </head>
+
 <body>
-    
-<div class="menuPrincipal">
-    <h1>Tic Tac Toe</h1>
-    <div class="botonesJuego">
-        <button id="botonCPU">JUGADOR VS CPU</button>
-        <button id="botonLocal">JUGADOR VS JUGADOR</button>
+
+    <!-- Contenedor del menú principal -->
+    <div class="menuPrincipal">
+        <h1>Tic Tac Toe</h1> <!-- Título del juego -->
+
+        <!-- Botones para seleccionar el modo de juego -->
+        <div class="botonesJuego">
+            <button id="botonCPU">JUGADOR VS CPU</button> <!-- Botón para jugar contra la CPU -->
+            <button id="botonLocal">JUGADOR VS JUGADOR</button> <!-- Botón para jugar en modo local (dos jugadores) -->
+        </div>
     </div>
-</div>
 
-<!-- Archivo de sonido -->
-<audio id="sonidoBtn" src="../recursos/sounds/fichaSonido.MP3"></audio>
+    <!-- Archivo de sonido para el clic en los botones -->
+    <audio id="sonidoBtn" src="../recursos/sounds/fichaSonido.MP3"></audio>
 
-<script src="../funciones/menuPrincipal.js"></script>
+    <!-- Script que controla la lógica del menú principal -->
+    <script src="../funciones/menuPrincipal.js"></script>
+
 </body>
+
 </html>

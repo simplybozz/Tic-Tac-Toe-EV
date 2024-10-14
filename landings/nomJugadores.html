@@ -1,27 +1,45 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+    <!-- Configuración básica de codificación y ajuste para dispositivos móviles -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Título de la página para nombrar jugadores -->
     <title>Tic Tac Toe | Angel De la Cruz</title>
+    
+    <!-- Enlace al archivo CSS para el estilo de la pantalla de nombrar jugadores -->
     <link rel="stylesheet" href="../estilos/nomJugadores.css">
 </head>
+
 <body>
-    
+
+    <!-- Botón para volver a la pantalla anterior -->
     <div class="botonDireccion">
         <button id="btnVolver"><img src="../recursos/imgs/volverIcono.png"></button>
     </div>
 
+    <!-- Sección para introducir los nombres de los jugadores -->
     <div class="nombreJugadores">
-        <h1>NOMBRAR JUGADORES</h1>  
+        <h1>NOMBRAR JUGADORES</h1> <!-- Título de la sección -->
+        
+        <!-- Campo de entrada para el nombre del Jugador 1 -->
         <input type="text" id="nombre1" required placeholder="Nombrar Jugador 1">
+        
+        <!-- Campo de entrada para el nombre del Jugador 2 -->
         <input type="text" id="nombre2" required placeholder="Nombrar Jugador 2">
+        
+        <!-- Botón para iniciar el juego -->
         <button id="btnIniciar">INICIAR</button>
     </div>
-    
-<!-- Archivo de sonido -->
-<audio id="sonidoBtn" src="../recursos/sounds/fichaSonido.MP3"></audio>
 
-<script src="../funciones/nomJugadores.js"></script>
+    <!-- Archivo de sonido para el clic en botones -->
+    <audio id="sonidoBtn" src="../recursos/sounds/fichaSonido.MP3"></audio>
+
+    <!-- Script que controla la lógica de la pantalla de nombrar jugadores -->
+    <script src="../funciones/nomJugadores.js"></script>
+
 </body>
+
 </html>

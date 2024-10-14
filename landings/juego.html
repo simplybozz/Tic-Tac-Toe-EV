@@ -2,56 +2,69 @@
 <html lang="es">
 
 <head>
+    <!-- Configuración de codificación y escalado en dispositivos móviles -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Título del juego -->
     <title>Tic Tac Toe | Angel De la Cruz</title>
+    
+    <!-- Enlace al archivo CSS para el diseño del juego -->
     <link rel="stylesheet" href="../estilos/juego.css">
 </head>
 
 <body>
-
+    <!-- Botones de control (Volver y Reiniciar) -->
     <div class="botonesDireccion">
         <button id="btnVolver"><img src="../recursos/imgs/volverIcono.png"></button>
         <button class="btnReiniciar"><img src="../recursos/imgs/reiniciarIcono.png"></button>
     </div>
 
+    <!-- Sección del juego -->
     <div class="juego">
+        <!-- Información de los jugadores -->
         <div class="jugadores">
             <div class="jugador1">
-                <h1 id="nombreJug1"></h1>
+                <h1 id="nombreJug1"></h1> <!-- Nombre del jugador 1 -->
                 <div class="fotoJugador1">
-                    <h2 id="inicialesJug1"></h2>
+                    <h2 id="inicialesJug1"></h2> <!-- Iniciales del jugador 1 -->
                     <div class="fichaJug1">
-                        <img src="../recursos/imgs/iconoJugador1.png" id="fichaImg">
+                        <img src="../recursos/imgs/iconoJugador1.png" id="fichaImg"> <!-- Imagen de la ficha del jugador 1 -->
                     </div>
                 </div>
             </div>
-            <h2 id="vs">VS</h2>
+
+            <h2 id="vs">VS</h2> <!-- Texto "VS" entre los jugadores -->
+
             <div class="jugador2">
-                <h1 id="nombreJug2"></h1>
+                <h1 id="nombreJug2"></h1> <!-- Nombre del jugador 2 -->
                 <div class="fotoJugador2">
-                    <h2 id="inicialesJug2"></h2>
+                    <h2 id="inicialesJug2"></h2> <!-- Iniciales del jugador 2 -->
                     <div class="fichaJug2">
-                        <img src="../recursos/imgs/iconoJugador2.png" id="fichaImg">
+                        <img src="../recursos/imgs/iconoJugador2.png" id="fichaImg"> <!-- Imagen de la ficha del jugador 2 -->
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- Sección del fondo del juego y puntajes -->
         <div class="fondoJuego">
             <div class="puntaje">
                 <div class="victoriasJugador1">
                     <h2 id="inicialesJugador1Fondo"></h2>
-                    <h3 id="marcadorJugador1"><span id="puntajeJug1">0<span> Ganadas</h3>
+                    <h3 id="marcadorJugador1"><span id="puntajeJug1">0<span> Ganadas</h3> <!-- Marcador jugador 1 -->
                 </div>
                 <div class="victoriasJugador2">
                     <h2 id="inicialesJugador2Fondo"></h2>
-                    <h3 id="marcadorJugador2"><span id="puntajeJug2">0<span> Ganadas</h3>
+                    <h3 id="marcadorJugador2"><span id="puntajeJug2">0<span> Ganadas</h3> <!-- Marcador jugador 2 -->
                 </div>
                 <div class="empates">
-                    <img src="../recursos/imgs/empateIcono.png">
-                    <h3 id="marcadorEmpate"><span id="puntajeEmpate">0<span> Empates</h3>
+                    <img src="../recursos/imgs/empateIcono.png"> <!-- Icono de empate -->
+                    <h3 id="marcadorEmpate"><span id="puntajeEmpate">0<span> Empates</h3> <!-- Marcador empates -->
                 </div>
             </div>
+
+            <!-- Tablero del juego con sus celdas -->
             <div class="tablero">
                 <div class="celda" id="celda-1"></div>
                 <div class="celda" id="celda-2"></div>
@@ -66,11 +79,12 @@
         </div>
     </div>
 
+    <!-- Modal para cuando un jugador gana -->
     <section class="modalVictoria">
         <div class="modalResultados">
             <img src="../recursos/imgs/victoriaIcono.png" class="modalImg">
-            <h2 id="tituloModal">VICTORIA</h2>
-            <h3 id="nombreJugadorModalVic"></h3>
+            <h2 id="tituloModal">VICTORIA</h2> <!-- Título del modal de victoria -->
+            <h3 id="nombreJugadorModalVic"></h3> <!-- Nombre del ganador -->
             <div class="puntaje">
                 <div class="victoriasJugador1">
                     <h2 id="inicialesJugador1Modal"></h2>
@@ -92,13 +106,12 @@
         </div>
     </section>
 
-
+    <!-- Modal para cuando hay un empate -->
     <section class="modalEmpate">
         <div class="modalResultados">
             <img src="../recursos/imgs/empateIconoModal.png" class="modalImg3">
-            <h2 id="tituloModal">EMPATE</h2>
-            <h3 id="nombreJugadorModalEmp"><span id="nombreJugador1emp"></span> - <span
-                    id="nombreJugador2emp"></span></h3>
+            <h2 id="tituloModal">EMPATE</h2> <!-- Título del modal de empate -->
+            <h3 id="nombreJugadorModalEmp"><span id="nombreJugador1emp"></span> - <span id="nombreJugador2emp"></span></h3>
             <div class="puntaje">
                 <div class="victoriasJugador1">
                     <h2 id="inicialesJugador1Mod"></h2>
@@ -120,13 +133,11 @@
         </div>
     </section>
 
-
+    <!-- Modal para confirmar el reinicio del juego -->
     <section class="modalReiniciar">
         <div class="cajaReiniciar">
             <h2>¿Seguro que desea
-                <br>
-                reiniciar la partida?
-            </h2>
+                <br>reiniciar la partida?</h2> <!-- Pregunta de confirmación para reiniciar -->
             <div class="btnContainer">
                 <button class="btnCancelar">CANCELAR</button>
                 <button class="btnReiniciarModal">REINICIAR PARTIDA</button>
@@ -134,11 +145,12 @@
         </div>
     </section>
 
-    <!-- Archivo de sonido -->
+    <!-- Archivos de sonido para efectos en el juego -->
     <audio id="sonidoBtn" src="../recursos/sounds/fichaSonido.MP3"></audio>
     <audio id="sonidoVictoria" src="../recursos/sounds/victoriaSonido.MP3"></audio>
     <audio id="sonidoEmpate" src="../recursos/sounds/empateSonido.MP3"></audio>
 
+    <!-- Script para controlar la lógica del juego -->
     <script src="../funciones/juego.js"></script>
 </body>
 
