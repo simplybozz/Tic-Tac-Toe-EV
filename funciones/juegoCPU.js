@@ -360,13 +360,18 @@ function jugadaCPU() {
 window.onclick = function(event) {
     const modalVictoria = document.querySelector('.modalVictoria');
     const modalEmpate = document.querySelector('.modalEmpate');
+    const modalDerrota = document.querySelector('.modalDerrota');
 
     if (event.target === modalVictoria) {
-        modalVictoria.style.display = "none";
+        cerrarModal(modalVictoria);
     }
 
     if (event.target === modalEmpate) {
-        modalEmpate.style.display = "none";
+        cerrarModal(modalEmpate);
+    }
+
+    if (event.target === modalEmpate) {
+        cerrarModal(modalDerrota);
     }
 }
 
