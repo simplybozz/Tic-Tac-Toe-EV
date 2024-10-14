@@ -319,11 +319,11 @@ window.onclick = function(event) {
     const modalEmpate = document.querySelector('.modalEmpate');
 
     if (event.target === modalVictoria) {
-        modalVictoria.style.display = "none";
+        cerrarModal(modalVictoria);
     }
 
     if (event.target === modalEmpate) {
-        modalEmpate.style.display = "none";
+        cerrarModal(modalEmpate);
     }
 }
 

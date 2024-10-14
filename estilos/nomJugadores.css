@@ -98,7 +98,7 @@ body {
 
 
 /*RESPONSIVE*/
-@media (max-width: 1025px){
+@media (max-width:1025px){
     body {
         background-image: url(../recursos/imgs/Backtablet.png);
     }
