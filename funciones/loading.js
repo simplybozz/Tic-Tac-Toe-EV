@@ -14,7 +14,7 @@ window.onload = function() {
         // Si el progreso alcanza o supera el 100%, detener el intervalo y redirigir
         if (progress >= 100) {
             clearInterval(interval);
-            window.location.href = "menuPrincipal.html";
+            window.location.href = "landings/menuPrincipal.html";
         }
     }, 20);  // Intervalo de 20 milisegundos
 };
